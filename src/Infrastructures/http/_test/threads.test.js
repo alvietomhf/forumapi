@@ -193,6 +193,6 @@ describe('/threads endpoint', () => {
       expect(responseJson.status).toEqual('success')
       expect(responseJson.data.thread).toBeDefined()
       expect(responseJson.data.thread.comments[1].replies).toHaveLength(1)
-    })
+    }, 60000)
   })
 })
