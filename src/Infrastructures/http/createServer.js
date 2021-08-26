@@ -45,6 +45,17 @@ const createServer = async (injections) => {
     },
   ])
 
+  server.route({
+    method: 'GET',
+    path: '/',
+    options: {
+      auth: false,
+    },
+    handler: () => ({
+      value: 'Helloo, welcome to forum!',
+    }),
+  });
+
   server.auth.strategy('jwt', 'jwt', {
     keys: process.env.ACCESS_TOKEN_KEY,
     verify: {
