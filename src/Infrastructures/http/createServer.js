@@ -52,7 +52,7 @@ const createServer = async (injections) => {
       auth: false,
     },
     handler: () => ({
-      value: 'Hello, welcome to forum!',
+      value: 'Helloo, welcome to forum!',
     }),
   });
 
