@@ -1,6 +1,6 @@
-const AuthenticationRepository = require('../../../Domains/authentications/AuthenticationRepository')
-const AuthenticationTokenManager = require('../../security/AuthenticationTokenManager')
-const RefreshAuthenticationUseCase = require('../RefreshAuthenticationUseCase')
+const AuthenticationRepository = require('../../../../Domains/authentications/AuthenticationRepository')
+const AuthenticationTokenManager = require('../../../security/AuthenticationTokenManager')
+const RefreshAuthenticationUseCase = require('../../Authentication/RefreshAuthenticationUseCase')
 
 describe('RefreshAuthenticationUseCase', () => {
   it('should throw error if use case payload not contain refresh token', async () => {

@@ -1,8 +1,8 @@
-const NewComment = require('../../../Domains/comments/entities/NewComment')
-const AddedComment = require('../../../Domains/comments/entities/AddedComment')
-const CommentRepository = require('../../../Domains/comments/CommentRepository')
-const ThreadRepository = require('../../../Domains/threads/ThreadRepository')
-const AddCommentUseCase = require('../AddCommentUseCase')
+const NewComment = require('../../../../Domains/comments/entities/NewComment')
+const AddedComment = require('../../../../Domains/comments/entities/AddedComment')
+const CommentRepository = require('../../../../Domains/comments/CommentRepository')
+const ThreadRepository = require('../../../../Domains/threads/ThreadRepository')
+const AddCommentUseCase = require('../../Comment/AddCommentUseCase')
 
 describe('AddCommentUseCase', () => {
   /**

@@ -1,8 +1,8 @@
-const NewUser = require('../../../Domains/users/entities/NewUser')
-const AddedUser = require('../../../Domains/users/entities/AddedUser')
-const UserRepository = require('../../../Domains/users/UserRepository')
-const EncryptionHelper = require('../../security/EncryptionHelper')
-const AddUserUseCase = require('../AddUserUseCase')
+const NewUser = require('../../../../Domains/users/entities/NewUser')
+const AddedUser = require('../../../../Domains/users/entities/AddedUser')
+const UserRepository = require('../../../../Domains/users/UserRepository')
+const EncryptionHelper = require('../../../security/EncryptionHelper')
+const AddUserUseCase = require('../../User/AddUserUseCase')
 
 describe('AddUserUseCase', () => {
   /**

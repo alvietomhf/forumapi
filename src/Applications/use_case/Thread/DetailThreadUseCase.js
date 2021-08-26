@@ -1,6 +1,6 @@
-const DetailComment = require('../../Domains/comments/entities/DetailComment')
-const DetailReply = require('../../Domains/replies/entities/DetailReply')
-const DetailThread = require('../../Domains/threads/entities/DetailThread')
+const DetailComment = require('../../../Domains/comments/entities/DetailComment')
+const DetailReply = require('../../../Domains/replies/entities/DetailReply')
+const DetailThread = require('../../../Domains/threads/entities/DetailThread')
 
 class DetailThreadUseCase {
   constructor({ threadRepository, commentRepository, replyRepository }) {

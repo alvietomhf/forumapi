@@ -1,4 +1,4 @@
-const NewReply = require('../../Domains/replies/entities/NewReply')
+const NewReply = require('../../../Domains/replies/entities/NewReply')
 
 class AddedReplyUseCase {
   constructor({ commentRepository, threadRepository, replyRepository }) {

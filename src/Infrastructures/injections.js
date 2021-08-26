@@ -16,16 +16,16 @@ const CommentRepositoryPostgres = require('./repository/CommentRepositoryPostgre
 const ReplyRepositoryPostgres = require('./repository/ReplyRepositoryPostgres')
 
 // use case
-const AddUserUseCase = require('../Applications/use_case/AddUserUseCase')
-const LoginUserUseCase = require('../Applications/use_case/LoginUserUseCase')
-const RefreshAuthenticationUseCase = require('../Applications/use_case/RefreshAuthenticationUseCase')
-const LogoutUserUseCase = require('../Applications/use_case/LogoutUserUseCase')
-const AddThreadUseCase = require('../Applications/use_case/AddThreadUseCase')
-const AddCommentUseCase = require('../Applications/use_case/AddCommentUseCase')
-const DeleteCommentUseCase = require('../Applications/use_case/DeleteCommentUseCase')
-const DetailThreadUseCase = require('../Applications/use_case/DetailThreadUseCase')
-const AddReplyUseCase = require('../Applications/use_case/AddReplyUseCase')
-const DeleteReplyUseCase = require('../Applications/use_case/DeleteReplyUseCase')
+const AddUserUseCase = require('../Applications/use_case/User/AddUserUseCase')
+const LoginUserUseCase = require('../Applications/use_case/Authentication/LoginUserUseCase')
+const RefreshAuthenticationUseCase = require('../Applications/use_case/Authentication/RefreshAuthenticationUseCase')
+const LogoutUserUseCase = require('../Applications/use_case/Authentication/LogoutUserUseCase')
+const AddThreadUseCase = require('../Applications/use_case/Thread/AddThreadUseCase')
+const AddCommentUseCase = require('../Applications/use_case/Comment/AddCommentUseCase')
+const DeleteCommentUseCase = require('../Applications/use_case/Comment/DeleteCommentUseCase')
+const DetailThreadUseCase = require('../Applications/use_case/Thread/DetailThreadUseCase')
+const AddReplyUseCase = require('../Applications/use_case/Reply/AddReplyUseCase')
+const DeleteReplyUseCase = require('../Applications/use_case/Reply/DeleteReplyUseCase')
 
 const serviceInstanceContainer = {
   userRepository: new UserRepositoryPostgres(pool, nanoid),

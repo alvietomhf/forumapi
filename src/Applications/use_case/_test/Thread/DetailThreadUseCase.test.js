@@ -1,7 +1,7 @@
-const CommentRepository = require('../../../Domains/comments/CommentRepository')
-const ThreadRepository = require('../../../Domains/threads/ThreadRepository')
-const ReplyRepository = require('../../../Domains/replies/ReplyRepository')
-const DetailThreadUseCase = require('../DetailThreadUseCase')
+const CommentRepository = require('../../../../Domains/comments/CommentRepository')
+const ThreadRepository = require('../../../../Domains/threads/ThreadRepository')
+const ReplyRepository = require('../../../../Domains/replies/ReplyRepository')
+const DetailThreadUseCase = require('../../Thread/DetailThreadUseCase')
 
 describe('DetailThreadUseCase', () => {
   /**
