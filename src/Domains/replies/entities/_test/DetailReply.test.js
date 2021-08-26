@@ -22,7 +22,7 @@ describe('a DetailReply entities', () => {
       username: 'mita',
       date: new Date(),
       content: 'this reply',
-      isdelete: 1
+      isdelete: 1,
     }
 
     // Action and Assert
@@ -38,7 +38,7 @@ describe('a DetailReply entities', () => {
       username: 'mita',
       date: new Date(),
       content: 'this content',
-      isdelete: true
+      isdelete: true,
     }
 
     const payload2 = {
@@ -46,7 +46,7 @@ describe('a DetailReply entities', () => {
       username: 'mita',
       date: new Date(),
       content: 'this content',
-      isdelete: false
+      isdelete: false,
     }
 
     // Action

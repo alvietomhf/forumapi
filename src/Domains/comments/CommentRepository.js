@@ -14,6 +14,10 @@ class CommentRepository {
   async getCommentByThreadId(param) {
     throw new Error('COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED')
   }
+
+  async likeComment(param) {
+    throw new Error('COMMENT_REPOSITORY.METHOD_NOT_IMPLEMENTED')
+  }
 }
 
 module.exports = CommentRepository

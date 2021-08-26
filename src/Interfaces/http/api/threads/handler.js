@@ -14,7 +14,7 @@ class ThreadsHandler {
         credentials: { user },
       },
     },
-    h
+    h,
   ) {
     const addedThread = await this._addThreadUseCase.execute({ payload, user })
 

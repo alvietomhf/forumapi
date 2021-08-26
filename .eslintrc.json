@@ -18,8 +18,6 @@
     "no-unused-vars": "off",
     "no-console": "off",
     "semi": "off",
-    "no-restricted-syntax": [
-      "ForOfStatement"
-    ]
+    "no-restricted-syntax": "off"
   }
 }

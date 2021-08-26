@@ -1,6 +1,7 @@
 const CommentRepository = require('../../../../Domains/comments/CommentRepository')
 const ThreadRepository = require('../../../../Domains/threads/ThreadRepository')
 const ReplyRepository = require('../../../../Domains/replies/ReplyRepository')
+const LikeRepository = require('../../../../Domains/likes/LikeRepository')
 const DetailThreadUseCase = require('../../Thread/DetailThreadUseCase')
 
 describe('DetailThreadUseCase', () => {
@@ -13,12 +14,13 @@ describe('DetailThreadUseCase', () => {
     const mockCommentRepository = new CommentRepository()
     const mockThreadRepository = new ThreadRepository()
     const mockReplyRepository = new ReplyRepository()
+    const mockLikeRepository = new LikeRepository()
     const thread = {
       id: 'thread-123',
       title: 'thread',
       body: 'my thread',
       username: 'haykal',
-      date: new Date()
+      date: new Date(),
     }
     const comments = [
       {
@@ -51,6 +53,14 @@ describe('DetailThreadUseCase', () => {
         isdelete: true,
       },
     ]
+    const likes = [
+      {
+        id: 'like-123',
+        commentid: 'comment-123',
+        owner: 'user-234',
+        islike: true,
+      },
+    ]
 
     /** mocking needed function */
     mockThreadRepository.getThreadById = jest
@@ -62,12 +72,16 @@ describe('DetailThreadUseCase', () => {
     mockReplyRepository.getReplyByCommentIds = jest
       .fn()
       .mockImplementation(() => Promise.resolve(replies))
+    mockLikeRepository.getLikeByCommentIds = jest
+      .fn()
+      .mockImplementation(() => Promise.resolve(likes))
 
     /** creating use case instance */
     const getDetailThreadUseCase = new DetailThreadUseCase({
       threadRepository: mockThreadRepository,
       commentRepository: mockCommentRepository,
       replyRepository: mockReplyRepository,
+      likeRepository: mockLikeRepository,
     })
 
     // Action
@@ -84,10 +98,15 @@ describe('DetailThreadUseCase', () => {
       'comment-123',
       'comment-321',
     ])
+    expect(mockLikeRepository.getLikeByCommentIds).toBeCalledWith([
+      'comment-123',
+      'comment-321',
+    ])
     expect(result.thread.comments[0].replies).toHaveLength(1)
     expect(result.thread.comments[0].replies[0].id).toEqual('reply-123')
     expect(result.thread.comments[0].replies[0].content).toEqual(
       '**balasan telah dihapus**',
     )
+    expect(result.thread.comments[0].likeCount).toEqual(1)
   })
 })

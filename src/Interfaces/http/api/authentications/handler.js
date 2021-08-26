@@ -10,13 +10,12 @@ class AuthenticationsHandler {
 
     this.postAuthenticationHandler = this.postAuthenticationHandler.bind(this)
     this.putAuthenticationHandler = this.putAuthenticationHandler.bind(this)
-    this.deleteAuthenticationHandler =
-      this.deleteAuthenticationHandler.bind(this)
+    this.deleteAuthenticationHandler = this.deleteAuthenticationHandler.bind(this)
   }
 
   async postAuthenticationHandler(request, h) {
     const { accessToken, refreshToken } = await this._loginUserUseCase.execute(
-      request.payload
+      request.payload,
     )
     const response = h.response({
       status: 'success',
@@ -31,7 +30,7 @@ class AuthenticationsHandler {
 
   async putAuthenticationHandler(request) {
     const accessToken = await this._refreshAuthenticationUseCase.execute(
-      request.payload
+      request.payload,
     )
 
     return {

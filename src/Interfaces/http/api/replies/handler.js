@@ -15,7 +15,7 @@ class RepliesHandler {
       },
       params: { threadId, commentId },
     },
-    h
+    h,
   ) {
     const addedReply = await this._addReplyUseCase.execute({
       payload,

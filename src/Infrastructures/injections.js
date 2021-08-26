@@ -14,6 +14,7 @@ const JwtTokenManager = require('./security/JwtTokenManager')
 const ThreadRepositoryPostgres = require('./repository/ThreadRepositoryPostgres')
 const CommentRepositoryPostgres = require('./repository/CommentRepositoryPostgres')
 const ReplyRepositoryPostgres = require('./repository/ReplyRepositoryPostgres')
+const LikeRepositoryPostgres = require('./repository/LikeRepositoryPostgres')
 
 // use case
 const AddUserUseCase = require('../Applications/use_case/User/AddUserUseCase')
@@ -26,6 +27,7 @@ const DeleteCommentUseCase = require('../Applications/use_case/Comment/DeleteCom
 const DetailThreadUseCase = require('../Applications/use_case/Thread/DetailThreadUseCase')
 const AddReplyUseCase = require('../Applications/use_case/Reply/AddReplyUseCase')
 const DeleteReplyUseCase = require('../Applications/use_case/Reply/DeleteReplyUseCase')
+const LikeCommentUseCase = require('../Applications/use_case/Like/LikeCommentUseCase')
 
 const serviceInstanceContainer = {
   userRepository: new UserRepositoryPostgres(pool, nanoid),
@@ -35,6 +37,7 @@ const serviceInstanceContainer = {
   threadRepository: new ThreadRepositoryPostgres(pool, nanoid),
   commentRepository: new CommentRepositoryPostgres(pool, nanoid),
   replyRepository: new ReplyRepositoryPostgres(pool, nanoid),
+  likeRepository: new LikeRepositoryPostgres(pool, nanoid),
 }
 
 const useCaseInstanceContainer = {
@@ -72,6 +75,7 @@ const useCaseInstanceContainer = {
     threadRepository: serviceInstanceContainer.threadRepository,
     commentRepository: serviceInstanceContainer.commentRepository,
     replyRepository: serviceInstanceContainer.replyRepository,
+    likeRepository: serviceInstanceContainer.likeRepository,
   }),
   addReplyUseCase: new AddReplyUseCase({
     commentRepository: serviceInstanceContainer.commentRepository,
@@ -82,6 +86,11 @@ const useCaseInstanceContainer = {
     commentRepository: serviceInstanceContainer.commentRepository,
     threadRepository: serviceInstanceContainer.threadRepository,
     replyRepository: serviceInstanceContainer.replyRepository,
+  }),
+  likeCommentUseCase: new LikeCommentUseCase({
+    commentRepository: serviceInstanceContainer.commentRepository,
+    threadRepository: serviceInstanceContainer.threadRepository,
+    likeRepository: serviceInstanceContainer.likeRepository,
   }),
 }
 

@@ -23,7 +23,7 @@ describe('a DetailThread entities', () => {
       body: 'dicoding',
       date: new Date(),
       username: 'vito',
-      comments: 1
+      comments: 1,
     }
 
     // Action and Assert
@@ -46,9 +46,9 @@ describe('a DetailThread entities', () => {
           username: 'mita',
           date: new Date(),
           replies: [],
-          content: '**komentar telah dihapus**'
-        }
-      ]
+          content: '**komentar telah dihapus**',
+        },
+      ],
     }
 
     // Action

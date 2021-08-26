@@ -59,6 +59,7 @@ class ReplyRepositoryPostgres extends ReplyRepository {
         text: 'SELECT * FROM replies WHERE commentid = $1',
         values: [id],
       }
+      /* eslint-disable no-await-in-loop */
       const result = await this._pool.query(query)
       result.rows.forEach((row) => {
         replies.push(row)

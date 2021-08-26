@@ -15,7 +15,7 @@ class CommentsHandler {
       },
       params: { threadId },
     },
-    h
+    h,
   ) {
     const addedComment = await this._addCommentUseCase.execute({
       payload,

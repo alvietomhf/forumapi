@@ -2,7 +2,9 @@ class DetailReply {
   constructor(payload) {
     this._verifyPayload(payload)
 
-    const { id, username, date, content, isdelete } = payload
+    const {
+      id, username, date, content, isdelete,
+    } = payload
 
     this.id = id
     this.username = username
@@ -10,7 +12,9 @@ class DetailReply {
     this.content = this._showContent({ content, isdelete })
   }
 
-  _verifyPayload({ id, username, date, content, isdelete }) {
+  _verifyPayload({
+    id, username, date, content, isdelete,
+  }) {
     if (!id || !username || !date || !content || isdelete === 'undefined') {
       throw new Error('DETAIL_REPLY.NOT_CONTAIN_NEEDED_PROPERTY')
     }

@@ -10,14 +10,14 @@ class JwtTokenManager extends AuthenticationTokenManager {
   async createAccessToken(payload) {
     return this._jwt.generate(
       { aud: 'urn:audience:test', iss: 'urn:issuer:test', ...payload },
-      process.env.ACCESS_TOKEN_KEY
+      process.env.ACCESS_TOKEN_KEY,
     )
   }
 
   async createRefreshToken(payload) {
     return this._jwt.generate(
       { aud: 'urn:audience:test', iss: 'urn:issuer:test', ...payload },
-      process.env.REFRESH_TOKEN_KEY
+      process.env.REFRESH_TOKEN_KEY,
     )
   }
 

@@ -22,7 +22,7 @@ describe('a DetailComment entities', () => {
       username: 'mita',
       date: new Date(),
       content: 'this content',
-      isdelete: 1
+      isdelete: 1,
     }
 
     // Action and Assert
@@ -38,14 +38,14 @@ describe('a DetailComment entities', () => {
       username: 'mita',
       date: new Date(),
       content: 'this content',
-      isdelete: true
+      isdelete: true,
     }
     const payload2 = {
       id: 'comment-FBs3OkJBCarHDkv8_1bIE',
       username: 'mita',
       date: new Date(),
       content: 'this content',
-      isdelete: false
+      isdelete: false,
     }
 
     // Action
